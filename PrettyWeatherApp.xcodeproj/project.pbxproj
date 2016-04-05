@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		28226D825364BAE47AA128F1 /* Pods_PrettyWeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F201C0880A78C9E70B4CD265 /* Pods_PrettyWeatherApp.framework */; };
+		4C1023EE1CB34FBB008831A2 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1023ED1CB34FBA008831A2 /* WeatherCondition.swift */; };
+		4C1023F01CB352EE008831A2 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1023EF1CB352EE008831A2 /* WeatherService.swift */; };
+		4C1023F21CB353E5008831A2 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1023F11CB353E5008831A2 /* WeatherForecast.swift */; };
+		4C1023F41CB35672008831A2 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1023F31CB35672008831A2 /* Double+Extension.swift */; };
+		4C1023F61CB356BB008831A2 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1023F51CB356BB008831A2 /* Functions.swift */; };
 		4C178A791CAF572E006EA480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C178A781CAF572E006EA480 /* AppDelegate.swift */; };
 		4C178A7B1CAF572E006EA480 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C178A7A1CAF572E006EA480 /* ViewController.swift */; };
 		4C178A7E1CAF572E006EA480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C178A7C1CAF572E006EA480 /* Main.storyboard */; };
@@ -44,6 +49,11 @@
 
 /* Begin PBXFileReference section */
 		0463551290D461CB8380B165 /* Pods-PrettyWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrettyWeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrettyWeatherApp/Pods-PrettyWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
+		4C1023ED1CB34FBA008831A2 /* WeatherCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
+		4C1023EF1CB352EE008831A2 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		4C1023F11CB353E5008831A2 /* WeatherForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
+		4C1023F31CB35672008831A2 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		4C1023F51CB356BB008831A2 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		4C178A751CAF572E006EA480 /* PrettyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrettyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C178A781CAF572E006EA480 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C178A7A1CAF572E006EA480 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +152,11 @@
 				4C178AB01CB174A9006EA480 /* WeatherDayForecastView.swift */,
 				4C178AB21CB1AD79006EA480 /* GeolocationService.swift */,
 				4C178AB41CB1C434006EA480 /* FlickrService.swift */,
+				4C1023EF1CB352EE008831A2 /* WeatherService.swift */,
+				4C1023ED1CB34FBA008831A2 /* WeatherCondition.swift */,
+				4C1023F11CB353E5008831A2 /* WeatherForecast.swift */,
+				4C1023F31CB35672008831A2 /* Double+Extension.swift */,
+				4C1023F51CB356BB008831A2 /* Functions.swift */,
 			);
 			path = PrettyWeatherApp;
 			sourceTree = "<group>";
@@ -357,14 +372,19 @@
 			files = (
 				4C178AB31CB1AD79006EA480 /* GeolocationService.swift in Sources */,
 				4C178AAB1CB160C4006EA480 /* WeatherHourlyForecastView.swift in Sources */,
+				4C1023F41CB35672008831A2 /* Double+Extension.swift in Sources */,
 				4C178AB51CB1C434006EA480 /* FlickrService.swift in Sources */,
 				4C178AAD1CB16114006EA480 /* WeatherDaysForecastView.swift in Sources */,
+				4C1023F01CB352EE008831A2 /* WeatherService.swift in Sources */,
 				4C178A7B1CAF572E006EA480 /* ViewController.swift in Sources */,
 				4C178AA91CAF75F7006EA480 /* CurrentWeatherView.swift in Sources */,
+				4C1023F61CB356BB008831A2 /* Functions.swift in Sources */,
+				4C1023F21CB353E5008831A2 /* WeatherForecast.swift in Sources */,
 				4C178A791CAF572E006EA480 /* AppDelegate.swift in Sources */,
 				4C178AA71CAF57A0006EA480 /* PrettyWeatherViewController.swift in Sources */,
 				4C178AAF1CB16AC2006EA480 /* WeatherHourForecastView.swift in Sources */,
 				4C178AB11CB174A9006EA480 /* WeatherDayForecastView.swift in Sources */,
+				4C1023EE1CB34FBB008831A2 /* WeatherCondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

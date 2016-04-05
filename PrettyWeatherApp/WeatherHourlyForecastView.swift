@@ -98,9 +98,12 @@ private extension WeatherHourlyForecastView{
 
 // MARK: Render
 extension WeatherHourlyForecastView{
-    func render(){
-        forecastCells.forEach {
-            $0.render()
+    func render(weatherConditions: Array<WeatherCondition>){
+        zip(forecastCells, weatherConditions).forEach {
+            $0.render($1)
         }
+        /*forecastCells.forEach {
+            $0.render()
+        }*/
     }
 }

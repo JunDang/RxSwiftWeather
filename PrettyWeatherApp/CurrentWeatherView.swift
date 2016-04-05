@@ -125,7 +125,26 @@ private extension CurrentWeatherView {
 
 // MARK: Render
 extension CurrentWeatherView{
-    func render(){
+    func render(weatherCondition: WeatherCondition){
+        iconLbl.attributedText = iconStringFromIcon(weatherCondition.icon!, size: 20)
+        weatherLbl.text = weatherCondition.weather
+        
+        var usesMetric = false
+        if let localeSystem = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem) as? Bool {
+            usesMetric = localeSystem
+        }
+        
+        if usesMetric {
+            minTempLbl.text = "\(weatherCondition.minTempCelsius.roundToInt())°"
+            maxTempLbl.text = "\(weatherCondition.maxTempCelsius.roundToInt())°"
+            currentTempLbl.text = "\(weatherCondition.tempCelsius.roundToInt())°"
+        } else {
+            minTempLbl.text = "\(weatherCondition.minTempFahrenheit.roundToInt())°"
+            maxTempLbl.text = "\(weatherCondition.maxTempFahrenheit.roundToInt())°"
+            currentTempLbl.text = "\(weatherCondition.tempFahrenheit.roundToInt())°"
+        }
+        /*
+        cityLbl.text = weatherCondition.cityName ?? ""
         iconLbl.attributedText = WIKFontIcon.wiDaySunnyIconWithSize(20).attributedString()
         weatherLbl.text = "Sunny"
         
@@ -133,6 +152,6 @@ extension CurrentWeatherView{
         maxTempLbl.text = "10°"
         currentTempLbl.text = "6°"
         
-        cityLbl.text = "London"
+        cityLbl.text = "London"*/
     }
 }

@@ -27,6 +27,7 @@ class PrettyWeatherViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let geolocationService = GeolocationService.instance
     private let flickrService = FlickrService.instance
+    private let weatherService = WeatherService.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +36,22 @@ class PrettyWeatherViewController: UIViewController {
         layoutView()
         style()
         render(UIImage(named: "DefaultImage"))
-        renderSubviews()
+        renderSubviews(weatherService.getDefaultWeatherForecast())
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        geolocationService.getLocation()
+        let locationDrive = geolocationService.getLocation()
+        
+        locationDrive
+            .flatMap(weatherService.getWeatherForecast)
+            .driveNext { [unowned self] (weatherForecast) in
+                self.renderSubviews(weatherForecast)
+            }
+            .addDisposableTo(disposeBag)
+        
+        //geolocationService.getLocation()
+        locationDrive
             .flatMap(flickrService.getBackgroundImage)
             .driveNext { [unowned self] (image) in
                 self.render(image)
@@ -128,10 +139,10 @@ private extension PrettyWeatherViewController {
         overlayView.alpha = 0
     }
     
-    func renderSubviews() {
-        currentWeatherView.render()
-        hourlyForecastView.render()
-        daysForecastView.render()
+    func renderSubviews(weatherForecast: WeatherForecast) {
+        currentWeatherView.render(weatherForecast.currentWeatherCondition)
+        hourlyForecastView.render(weatherForecast.hourlyWeatherConditions)
+        daysForecastView.render(weatherForecast.dailyWeatherConditions)
     }
 }
 
